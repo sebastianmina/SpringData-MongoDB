@@ -4,7 +4,7 @@ import java.util.List;
 import co.escuelaing.User.Data.User;
 //import co.escuelaing.User.Dto.UserDTO;
 
-public interface UserInterface {
+public interface UserService {
     
     User create( User user );
 

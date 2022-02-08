@@ -18,17 +18,17 @@ import org.springframework.web.bind.annotation.RestController;
 
 import co.escuelaing.User.Data.User;
 import co.escuelaing.User.Dto.UserDTO;
-import co.escuelaing.User.Service.UserInterface;
+import co.escuelaing.User.Service.UserService;
 import java.util.concurrent.atomic.AtomicLong;
 
 @RestController
 @RequestMapping( "/v1/user" )
 public class UserController {
     
-    private final UserInterface userService;
+    private final UserService userService;
     private final AtomicLong counter = new AtomicLong(0);
 
-	 public UserController(@Autowired UserInterface userService) {
+	 public UserController(@Autowired UserService userService) {
 		 this.userService = userService;
 	 }
 
@@ -55,7 +55,7 @@ public class UserController {
           User user = userService.findById(id);
           user.setEmail(userDto.getEmail());
           user.setName(userDto.getName());
-          user.setLastname(userDto.getLastName());
+          user.setLastName(userDto.getLastName());
           return new ResponseEntity<User>(userService.update(user , id ), HttpStatus.OK );
      }
 

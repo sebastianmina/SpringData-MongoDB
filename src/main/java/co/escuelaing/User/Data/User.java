@@ -40,7 +40,7 @@ public class User {
         this.id = id;
     }
 
-    public String name(){
+    public String getName(){
         return name;
     }
 
@@ -48,7 +48,7 @@ public class User {
         this.name = name;
     }
 
-    public String email(){
+    public String getEmail(){
         return email;
     }
 
@@ -56,15 +56,15 @@ public class User {
         this.email = email;
     }
 
-    public String lastName(){
+    public String getLastName(){
         return lastName;
     }
 
-    public void setLastname(String lastName){
+    public void setLastName(String lastName){
         this.lastName = lastName;
     }
 
-    public Date createdAt(){
+    public Date getCreatedAt(){
         return createdAt;
     }
 
