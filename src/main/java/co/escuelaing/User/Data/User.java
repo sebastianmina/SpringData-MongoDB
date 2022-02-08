@@ -1,12 +1,28 @@
 package co.escuelaing.User.Data;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.Date;
+
+@Document
 public class User {
+    @Id
+    String id;
+  
+    String name;
+ 
+    @Indexed( unique = true )
+    String email;
+ 
+    String lastName;
+ 
+    Date createdAt;
+ 
+    public User()
+    {
+    }
 
-    private String id;
-    private String name;
-    private String email;
-    private String lastName;
-    private String createdAt;
 
     public User(String id , String name, String email, String lastName, Date createdAt) {
         this.id = id;
@@ -48,11 +64,11 @@ public class User {
         this.lastName = lastName;
     }
 
-    public String createdAt(){
+    public Date createdAt(){
         return createdAt;
     }
 
-    public void setCreatedAt(String createdAtString){
+    public void setCreatedAt(Date createdAtString){
         this.createdAt = createdAtString;
     }
 }
